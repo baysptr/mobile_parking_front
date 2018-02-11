@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="PT. IGS">
+        <meta name="keyword" content="Mobile Parking, Mobile, Parking">
+        <title>Mobile Parking</title>
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/style-responsive.css" rel="stylesheet">
+        <link href="components/sweetalert/dist/sweetalert.css" rel="stylesheet">
+    </head>
+
+    <body ng-app="mobile_parking">
+        <section id="container" >
+            <!--header start-->
+            <div ng-include="'templates/layout/header.html'"></div>
+            <!--header end-->
+
+            <!--sidebar start-->
+            <div ng-include="'templates/layout/sidebar.html'"></div>
+            <!--sidebar end-->
+
+            <!-- **********************************************************************************************************************************************************
+            MAIN CONTENT
+            *********************************************************************************************************************************************************** -->
+            <!--main content start-->
+            <section id="main-content">
+                <section class="wrapper site-min-height" ui-view="">
+                    
+                </section><! --/wrapper -->
+            </section><!-- /MAIN CONTENT -->
+
+            <!--main content end-->
+        </section>
+
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="components/angular/angular.min.js"></script>
+        <script src="components/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="components/sweetalert/dist/sweetalert-dev.js"></script>
+        <script src="components/angular/angular-ui-router.js"></script>
+        <script src="components/angular/angular-resource.min.js"></script>
+        <script src="components/angular-animate/angular-animate.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+        <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+        
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/HomeControllers.js"></script>
+        <script src="scripts/services/HomeServices.js"></script>
+        
+        <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="assets/js/common-scripts.js"></script>
+    </body>
+</html>
