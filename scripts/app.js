@@ -8,7 +8,9 @@ angular
         .module('mobile_parking', [
             'ui.router',
             'ngAnimate',
-            'ngResource'
+            'ngResource',
+            'datatables',
+            'datatables.bootstrap'
         ])
         .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
                 $urlRouterProvider.otherwise('/');
