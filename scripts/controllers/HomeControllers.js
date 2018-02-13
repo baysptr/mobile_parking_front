@@ -27,6 +27,27 @@ angular.module('mobile_parking')
                 $('#myModal').modal('show');
             };
 
+            $scope.simpan = function () {
+                if ($scope.Tempat === undefined) {
+                    swal("Oops...", "Data Belum Terisi", "error");
+                } else {
+                    HomeServices.simpan($scope.Tempat).done(function (data) {
+                        $scope.gritterSuccess(data);
+                        console.log(data);
+                        $scope.clear();
+                        $scope.reload();
+                    });
+                }
+            };
+
+            $scope.clear = function () {
+                $scope.Tempat.nama_tempat = "";
+                $scope.Tempat.latitude = "";
+                $scope.Tempat.longtitude = "";
+                $scope.Tempat.deskripsi = "";
+                $('#myModal').modal("hide");
+            };
+
             $scope.hapus = function (obj) {
                 swal({
                     title: "Are you sure?",
@@ -57,4 +78,23 @@ angular.module('mobile_parking')
                 DTColumnDefBuilder.newColumnDef(3).notSortable(),
                 DTColumnDefBuilder.newColumnDef(2).notSortable()
             ];
+
+            $scope.gritterSuccess = function (data) {
+                var unique_id = $.gritter.add({
+                    title: 'Notice! Success',
+                    text: 'Data tempat <p style="color:#ffd777">' + data.data.nama_tempat + '</p> berhasil kami inputkan',
+                    image: 'assets/img/go-park.png',
+                    sticky: true,
+                    time: '',
+                    class_name: 'my-sticky-class'
+                });
+                setTimeout(function () {
+
+                    $.gritter.remove(unique_id, {
+                        fade: true,
+                        speed: 'slow'
+                    });
+
+                }, 6000);
+            };
         });
